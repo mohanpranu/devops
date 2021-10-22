@@ -1,0 +1,23 @@
+creating the volume
+   create the volume under the ebs,add the volume  accrdng to reqirment and the attach to the instance
+        lsblk ( to get all info mounted instances) in terminal
+        file -s /dev/xvdf  (info about file system)
+        file -s /dev/xvda  (info about file system)
+         mkfs -t ext4 /dev/xvdf ( make file file system ) after creating file sysytem ,need to mount 
+         to mount we need to create directory
+         mkdir ebsvolume
+         check with ls command
+         mount the new added storage
+         mount /dev/xvdf ebsvolume
+       now we can create the file in the ebsvolume
+       umount /dev/xvdf
+       
+       we can modify the volume in the instance ,we only increase the volume cannot decrease the storage
+       after modifying ,check in the terminal throgh lsblk
+       df -h to check in tne operating system weather it is resized or not.
+       
+       resize2fs /dev/xvdf 
+       
+      
+
+
